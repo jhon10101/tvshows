@@ -18,9 +18,5 @@
                     curl_close($ch);
 
                     echo $json;
-                 //   $apiResult = json_decode($json, true);
-                 //    print_r($apiResult[0]['image']['medium']);
-                //  print_r($apiResult['name']);
-                 //  print_r($apiResult[0]['show']['image']['medium']);
 
 ?>

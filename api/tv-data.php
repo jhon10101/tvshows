@@ -9,7 +9,7 @@
                     ]);
 
             }else{
-                 //  include_once('api-geolocation.php');
+
                    $search = 'Show%5BshowStatus_enum%5D=&Show%5BshowType_enum%5D=1&Show%5Bgenre%5D=&Show%5Blanguage_enum%5D=&Show%5Bcountry_enum%5D=&Show%5Bnetwork_id%5D=&Show%5BwebChannel_id%5D=&Show%5Bruntime%5D=&Show%5Brating%5D=&Show%5Bsort%5D=9';
                    $url = 'https://api.tvmaze.com/shows';
                    $queryString = http_build_query([
@@ -26,9 +26,5 @@
                     curl_close($ch);
 
                     echo $json;
-                 //    $apiResult = json_decode($json, true);
-                 //    print_r($apiResult[0]['image']['medium']);
-                 //  print_r($apiResult[0]['name']);
-                 //  print_r($apiResult[0]['show']['image']['medium']);
 
 ?>

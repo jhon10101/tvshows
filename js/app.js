@@ -169,24 +169,4 @@ $(function() {
     })
 
 
-
-
-
-
-        /*
-            <tr taskId="${showtv.show.image}">
-                <td>${showtv.show.id}</td>
-                <td>
-                    <a href="#" class='task-item'>${showtv.show.name}</a>
-                </td>
-                <td>${showtv.show.summary}</td>
-                <td>
-                    <button class='task-delete btn btn-danger'>
-                        Delete
-                    </button>
-                </td>
-            </tr>
-        */
-
-
 });
