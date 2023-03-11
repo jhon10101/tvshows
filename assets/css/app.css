@@ -1,9 +1,20 @@
 
 .fade-in-image {
-    opacity: 60%;
+    opacity: 70%;
   }
   
   .fade-in-image:hover {
     opacity: 100%;
     transition: opacity 1s;
+    background-color:greenyellow;
+  }
+
+  body {
+    background-image: url('https://img1.picmix.com/output/stamp/normal/0/3/7/2/372730_b6f73.gif');
+    background-repeat:repeat-x;
+    background-size: 35%;
+  }
+  
+  nav {
+    opacity: 80%;
   }

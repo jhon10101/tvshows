@@ -118,8 +118,9 @@ $(function() {
         }
 
             template += `
-            <div id="${idnew}" class="fade-in-image col-sm-2 p-1 d-flex align-content-start flex-wrap modalid" data-toggle="modal" data-target="#exampleModal">
-                <div class="card shadow-lg-primary border-primary h-100">
+            <div id="${idnew}" class="btn fade-in-image col-sm-2 p-1 d-flex align-content-start flex-wrap modalid" data-toggle="modal" data-target="#exampleModal">
+
+            <div class="card shadow-lg-primary border-primary h-100">
                         <div class="card-text">
                             <img class="card-img-top" src="${newimage}">
                         </div>

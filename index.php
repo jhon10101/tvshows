@@ -27,23 +27,29 @@
 
         </div>
         </nav>
-        <form id="search" class="d-flex w-100">
-            <div  class="input-group mb-1 p-5">
-                <input id = "name" type="text" class="form-control" placeholder="Search TV Shows" aria-label="Search TV Shows" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </div>
+        
+        <div class="row  my-5 justify-content-center searching">
+            <div class="col-10 col-sm-4">
+                <form id="search" class="ml-auto w-100">
+                    <div  class="input-group">
+                        <input id = "name" type="text" class="form-control text-center" placeholder="Search TV Shows" aria-label="Search TV Shows" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
+
 
 <?php
      //   include_once('api/tv-data.php');
 ?>
     <div class="container">
         
-        <div class="row  p-4 justify-content-md-center">
+        <div class="row p-4 d-flex justify-content-center">
             <div class="container">
-                <div class="card-group" id="tasks"></div>
+                <div class="card-group justify-content-center" id="tasks"></div>
             </div>
         </div>
         
