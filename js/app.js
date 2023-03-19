@@ -5,7 +5,16 @@ $(function() {
 
     $(document).on('click', '.pagehome', function () {
         firstload = true;
-      //  alert(firstload);
+        let templateLoad = '';
+        templateLoad += `
+            <div class="text-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        `
+        $('#tasks').html(templateLoad);
+
                 $.post('api/tv-data.php', {category}, function (response) {
                     let tvshowsearch = JSON.parse(response);
 
@@ -21,6 +30,15 @@ $(function() {
     $(document).on('click', '.modalid', function (e) {
         let idmodal = $(this).attr("id");
         template = '';
+        let templateLoad = '';
+        templateLoad += `
+            <div class="text-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        `
+        $('#datostv').html(templateLoad);
        // console.log(idmodal);
        e.preventDefault();
                 $.post('api/tv-data-modal.php', {idmodal}, function (response) {
@@ -31,16 +49,34 @@ $(function() {
                   //  tvshowsearch.forEach(showtv =>{
 
                         imagetv = showtv.image;
+                        if((imagetv)){
                             newimage = JSON.stringify(imagetv);
                             newimage = JSON.parse(newimage);
                             newimage = newimage["medium"];
+                        }else{
+                            newimage = "https://static.tvmaze.com/images/no-img/no-img-portrait-text.png";
+                        }
+                        tvcountry = showtv.network;
+                        tvwebchannel = showtv.webChannel;
                         idnew = showtv.id;
                         newname = showtv.name;
                         tvlanguage = showtv.language;
                         tvgenres = showtv.genres;
-                        tvcountry = showtv.network.country.name;
-                        tvsummary = showtv.summary;
+                        tvpremiered = showtv.premiered;
+                        tvpremiered = new Date(tvpremiered);
+                        tvpremiered = tvpremiered.getFullYear()
                         
+                        tvsummary = showtv.summary;
+                        if ((tvcountry) == null){
+                            tvcountry = "Country: N/A";
+                        }else{
+                            tvcountry = showtv.network.country.name;
+                        }
+                        if ((tvwebchannel) == null){
+                            tvwebchannel = "";
+                        }else{
+                            tvwebchannel = showtv.webChannel.name;
+                        }
 
                     template += `
                                 <div class="row">
@@ -53,17 +89,19 @@ $(function() {
                                         <p>${tvgenres}</p>
                                         <div>${tvlanguage}</div>
                                         <div>${tvcountry}</div>
+                                        <div>${tvpremiered}</div>
+                                        <div>${tvwebchannel}</div>
                                     </div>
                                     <div class="">
-                                        <div class=""><br>Description: ${tvsummary}</div>
+                                        <div class=""><br>Synopsis: ${tvsummary}</div>
                                     </div>
                                 </div>
 
                         `
                  //   })
-             
+                 
                      $('#datostv').html(template);
-                     console.log(showtv);
+                   //  console.log(showtv);
                 });
        
     });
@@ -91,6 +129,7 @@ $(function() {
         let newname = '';
         let x = '';
        // alert(firstload);
+      // console.log(tvshowsearch);
         tvshowsearch.forEach(showtv =>{
             idnew = '';
             imagetv = '';
@@ -103,20 +142,24 @@ $(function() {
                 }
                 
             }else{
-                if((showtv.show.image) != null){
+                if((showtv.show.image)){
                     idnew = showtv.show.id;
                     imagetv = showtv.show.image;
+                    newname = showtv.show.name;
+                }else{
+                    newimage = "https://static.tvmaze.com/images/no-img/no-img-portrait-text.png";
+                    idnew = showtv.show.id;
                     newname = showtv.show.name;
                 }
             }  
 
-        //    
+           
         if((imagetv)){
             newimage = imagetv.medium;
         }else{
             newimage = "https://static.tvmaze.com/images/no-img/no-img-portrait-text.png";
         }
-
+        
             template += `
             <div id="${idnew}" class="btn fade-in-image col-sm-2 p-1 d-flex align-content-start flex-wrap modalid" data-toggle="modal" data-target="#exampleModal">
 
@@ -140,6 +183,15 @@ $(function() {
       //  alert("Hello world");                      
         let keywords = $('#name').val();
         template = '';
+        let templateLoad = '';
+        templateLoad += `
+            <div class="text-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        `
+        $('#tasks').html(templateLoad);
 
       //  console.log(keywords);
         e.preventDefault();

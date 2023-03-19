@@ -49,7 +49,13 @@
         
         <div class="row p-4 d-flex justify-content-center">
             <div class="container">
-                <div class="card-group justify-content-center" id="tasks"></div>
+                <div class="card-group justify-content-center" id="tasks">
+                    <div class="text-center">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
