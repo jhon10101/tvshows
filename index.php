@@ -8,6 +8,11 @@
         <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
         <link rel="stylesheet" href="assets/css/app.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+        <script src="js/app.js"></script>
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -49,7 +54,7 @@
         
         <div class="row p-4 d-flex justify-content-center">
             <div class="container">
-                <div class="card-group justify-content-center" id="tasks">
+                <div class="card-group card-content  justify-content-center" id="tasks">
                     <div class="text-center">
                         <div class="spinner-border" role="status">
                             <span class="sr-only">Loading...</span>
@@ -60,6 +65,12 @@
         </div>
         
     </div>
+
+<nav aria-label="Page navigation">
+  <ul class="pagination  justify-content-center">
+
+  </ul>
+</nav>
 
 <footer class="bg-primary text-center text-white">
         <!-- Grid container -->
@@ -122,8 +133,5 @@
             </div>
     
 </body>
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
-        <script src="js/app.js"></script>
+
 </html>

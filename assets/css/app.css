@@ -7,14 +7,20 @@
     opacity: 100%;
     transition: opacity 1s;
     background-color:greenyellow;
+    color: black;
   }
 
   body {
     background-image: url('https://img1.picmix.com/output/stamp/normal/0/3/7/2/372730_b6f73.gif');
     background-repeat:repeat-x;
-    background-size: 35%;
+    background-size: 30%;
   }
   
   nav {
     opacity: 80%;
   }
+
+  .card {
+    max-width: 200px;
+  }
+
