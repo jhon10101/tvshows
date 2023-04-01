@@ -1,7 +1,7 @@
 $(function() {
 
     var firstload = true;
-    let category = "technology";
+    let category = "tech";
 
     $(document).on('click', '.pagehome', function () {
         firstload = true;
@@ -23,7 +23,7 @@ $(function() {
                     firstload = false;
              
                      $('#tasks').html(template);
-                     //console.log(tvshowsearch);
+
                      fetchPagination();
                 });
     });
@@ -40,14 +40,10 @@ $(function() {
             </div>
         `
         $('#datostv').html(templateLoad);
-       // console.log(idmodal);
+
        e.preventDefault();
                 $.post('api/tv-data-modal.php', {idmodal}, function (response) {
                     let showtv = JSON.parse(response);
-                    
-              //      let tasks = JSON.parse(response);
-            //        template = fetchTasks(tasks);
-                  //  tvshowsearch.forEach(showtv =>{
 
                         imagetv = showtv.image;
                         if((imagetv)){
@@ -102,7 +98,7 @@ $(function() {
                  //   })
                  
                      $('#datostv').html(template);
-                   //  console.log(showtv);
+
                 });
        
     });
@@ -118,21 +114,18 @@ $(function() {
        firstload = false;
 
         $('#tasks').html(template);
-      //  console.log(tvshowsearch);
         
       fetchPagination();
-        
-        //////
+
     });
 
     function fetchTasks(tvshowsearch) {
-      //  let tvshowsearch = JSON.parse(tvshowsearch);
+
         let template = '';
         let imagetv = '';
         let newname = '';
         let x = '';
-       // alert(firstload);
-      // console.log(tvshowsearch);
+
         tvshowsearch.forEach(showtv =>{
             idnew = '';
             imagetv = '';
@@ -162,12 +155,12 @@ $(function() {
         }else{
             newimage = "https://static.tvmaze.com/images/no-img/no-img-portrait-text.png";
         }
-        //   <div id="${idnew}" class="btn fade-in-image col-sm-2 p-1 d-flex align-content-start flex-wrap modalid" data-toggle="modal" data-target="#exampleModal">
+
             template += `
            
-        
-                <div id="${idnew}"  class="card btn fade-in-image col-sm-2 p-1 m-2 shadow-lg-primary align-content-start  border-primary modalid" data-toggle="modal" data-target="#exampleModal">
-                    <div class="d-flex flex-wrap">    
+            <div class="d-flex "> 
+                <div id="${idnew}" class="card btn fade-in-image col-md-11 col-12 p-1 m-1 shadow-lg-primary align-content-start  border-primary modalid" data-toggle="modal" data-target="#exampleModal">
+                    <div class="flex-wrap ">    
                             <img class="card-img-top" src="${newimage}">
                         
                         <div class="card-body">
@@ -175,9 +168,8 @@ $(function() {
                         </div>
                     </div>
                 </div>
-            
-        
-            
+            </div>
+
                 `
 
         })
@@ -218,18 +210,13 @@ $(function() {
         });
 
     }else{
-        /*
-        $('#ingresar').fadeTo(2000,500).slideUp(500, function(){
-            $('#ingresar').slideUp(500);
-            document.getElementById("city").focus();
-        });
-        */
+
     }
 
     })
     function fetchPagination() {
         var numberOfItems = $(".card-content .card").length;
-        var limitPerPage = 5; //How many card items visible per a page
+        var limitPerPage = 8; //How many card items visible per a page
         var totalPages = Math.ceil(numberOfItems / limitPerPage);
         var paginationSize = 5; //How many page elements visible in the pagination
         var currentPage;
@@ -301,7 +288,19 @@ $(function() {
         return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
       }
 
-
+    // Go to Top
+    $(function(){
+        // Scroll Event
+        $(window).on('scroll', function(){
+            var scrolled = $(window).scrollTop();
+            if (scrolled > 600) $('.go-top').addClass('active');
+            if (scrolled < 600) $('.go-top').removeClass('active');
+        });  
+        // Click Event
+        $('.go-top').on('click', function() {
+            $("html, body").animate({ scrollTop: "0" },  500);
+        });
+    });
 
 
 });

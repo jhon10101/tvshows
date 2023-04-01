@@ -46,15 +46,11 @@
             </div>
         </div>
 
-
-<?php
-     //   include_once('api/tv-data.php');
-?>
     <div class="container">
         
-        <div class="row p-4 d-flex justify-content-center">
+        <div class="row p-4 justify-content-center">
             <div class="container">
-                <div class="card-group card-content  justify-content-center" id="tasks">
+                <div class="card-group card-content justify-content-center" id="tasks">
                     <div class="text-center">
                         <div class="spinner-border" role="status">
                             <span class="sr-only">Loading...</span>
@@ -71,6 +67,12 @@
 
   </ul>
 </nav>
+
+<div class="go-top active m-2">
+    <i class="fas fa-arrow-up">
+
+    </i>
+</div>
 
 <footer class="bg-primary text-center text-white">
         <!-- Grid container -->

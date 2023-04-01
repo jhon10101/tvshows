@@ -21,6 +21,49 @@
   }
 
   .card {
-    max-width: 200px;
+    max-width: 600px;
+    
   }
 
+/*================================================
+Go Top CSS
+=================================================*/
+.go-top {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  right: 15px;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 4;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: .9s;
+  transition: .9s;
+}
+
+.go-top.active {
+  top: 98%;
+  -webkit-transform: translateY(-98%);
+          transform: translateY(-98%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.go-top:hover, .go-top:focus {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@media only screen and (max-width: 767px) {
+  .go-top {
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+}
